@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crisp & Clean Laundry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #2c5aa0;
+      --accent: #4a7bc8;
+      --bg: #f9f9f9;
+      --text: #333;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
+    header {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: var(--accent);
+      padding: 0.5rem;
+    }
+    nav button {
+      background: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary);
+      transition: background 0.3s;
+    }
+    nav button:hover { background: #e0e0e0; }
+    .section { display: none; padding: 2rem 1rem; max-width: 900px; margin: auto; }
+    .section.active { display: block; }
+    h2 { text-align: center; color: var(--primary); margin-bottom: 1rem; }
+    ul { list-style: disc; padding-left: 1.5rem; }
+    .grid { display: grid; gap: 1.5rem; }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .pricing-table th, .pricing-table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .pricing-table th { background: var(--accent); color: #fff; }
+    form label { display: block; margin-top: 1rem; }
+    form input, form select, form textarea {
+      width: 100%; padding: 0.5rem; margin-top: 0.25rem;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    form button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contact-info { display: grid; gap: 1rem; }
+    .contact-item { display: flex; gap: 0.75rem; align-items: center; }
+    .contact-item span { font-size: 1.5rem; }
+    #confirmation {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #dff0d8;
+      border: 1px solid #b2d8b2;
+      border-radius: 4px;
+      color: #3c763d;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Crisp & Clean Laundry</h1>
+  <p>Fresh, folded, and always pristine</p>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('services')">Services</button>
+  <button onclick="showSection('pricing')">Pricing</button>
+  <button onclick="showSection('booking')">Booking</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<!-- Home -->
+<section id="home" class="section active">
+  <h2>Welcome to Crisp & Clean</h2>
+  <p style="text-align: center; max-width: 600px; margin: 1rem auto;">
+    We make laundry day simple. Schedule a pickup, let us wash & fold, 
+    then enjoy your fresh clothes delivered right to your door.
+  </p>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <ul class="grid">
+    <li>Wash & Fold – clean and neatly folded laundry</li>
+    <li>Pickup & Delivery – straight to your home</li>
+    <li>Same-Day Service – when you need it fast</li>
+    <li>Eco-Friendly Detergents – safe for you & the planet</li>
+  </ul>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="section">
+  <h2>Pricing</h2>
+  <table class="pricing-table">
+    <tr><th>Service</th><th>Price</th></tr>
+    <tr><td>Wash & Fold (per load)</td><td>$15</td></tr>
+    <tr><td>Pickup & Delivery</td><td>Included</td></tr>
+    <tr><td>Same-Day Service</td><td>+ $10</td></tr>
+  </table>
+</section>
+
+<!-- Booking -->
+<section id="booking" class="section">
+  <h2>Book a Pickup</h2>
+  <form id="bookingForm">
+    <label>Name: <input type="text" required></label>
+    <label>Email: <input type="email" required></label>
+    <label>Phone: <input type="tel" required></label>
+    <label>Service:
+      <select required>
+        <option value="">Select...</option>
+        <option>Wash & Fold</option>
+        <option>Wash, Fold & Delivery</option>
+      </select>
+    </label>
+    <label>Preferred Date: <input type="date" required></label>
+    <label>Special Instructions:
+      <textarea rows="3"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="confirmation">✅ Thank you! Your booking has been received.</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <div class="contact-item"><span>📞</span><div><strong>Phone:</strong><br><a href="tel:5551234wash">(555) 123-WASH</a></div></div>
+    <div class="contact-item"><span>✉️</span><div><strong>Email:</strong><br><a href="mailto:hello@crispandclean.com">hello@crispandclean.com</a></div></div>
+    <div class="contact-item"><span>💬</span><div><strong>Text:</strong><br>Same number - text us anytime!</div></div>
+    <div class="contact-item"><span>⏰</span><div><strong>Hours:</strong><br>Mon-Fri: 7 AM - 8 PM<br>Sat: 8 AM - 6 PM<br>Sun: Delivery only</div></div>
+  </div>
+</section>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('confirmation').style.display = 'block';
+    this.reset();
+    window.scrollTo({ top: document.getElementById('confirmation').offsetTop - 100, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
